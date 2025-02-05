@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apartment 360 Tour - furnished</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-logia-open">
+        <li class="text">Logia (open)</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-logia-closed">
+        <li class="text">Logia (closed)</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-entrance">
+        <li class="text">Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-hallway">
+        <li class="text">Hallway</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-master-bedroom">
+        <li class="text">Master bedroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-master-bathroom">
+        <li class="text">Master bathroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-bedroom">
+        <li class="text">Bedroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-bathroom">
+        <li class="text">Bathroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-shower">
+        <li class="text">Shower</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-dinning-area">
+        <li class="text">Dinning area</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-dinning-area---kitchen">
+        <li class="text">Dinning area - Kitchen</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-kitchen">
+        <li class="text">Kitchen</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-living-area">
+        <li class="text">Living area</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-ar">
+        <li class="text">AR</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-wc">
+        <li class="text">WC</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
