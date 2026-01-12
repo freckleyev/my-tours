@@ -200,36 +200,6 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   display: none;
 }
 
-#deviceOrientationToggle {
-    display: none; /* Hidden on Desktop */
-    position: absolute;
-    top: 0;
-    right: 80px; /* To the left of toggleLayer (which is at 40px) */
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    background-color: rgba(103,115,131,0.8);
-}
-
-.mobile #deviceOrientationToggle {
-    display: block; /* Visible on Mobile */
-    width: 50px;
-    height: 50px;
-    right: 100px; /* Adjusting for mobile button widths */
-}
-
-#deviceOrientationToggle .icon.on {
-    display: none;
-}
-
-#deviceOrientationToggle.enabled .icon.on {
-    display: block;
-}
-
-#deviceOrientationToggle.enabled .icon.off {
-    display: none;
-}
-
 /* Style for the new Toggle Layer button */
 #toggleLayer {
   display: block;
@@ -278,6 +248,45 @@ body.fullscreen-enabled.mobile #toggleLayer {
 
 #toggleLayer.visible .icon.on { display: block; opacity: 0.5; } /* Dimmed to show "pressed" state if desired, or keep block */
 #toggleLayer.visible .icon.off { display: none; }
+
+#deviceOrientationToggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 80px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: rgb(103,115,131);
+    background-color: rgba(103,115,131,0.8);
+}
+
+.mobile #deviceOrientationToggle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    right: 100px;
+}
+
+body.fullscreen-enabled #deviceOrientationToggle {
+    right: 120px;
+}
+
+body.fullscreen-enabled.mobile #deviceOrientationToggle {
+    right: 150px;
+}
+
+#deviceOrientationToggle .icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+#deviceOrientationToggle .icon.on { display: none; }
+#deviceOrientationToggle.enabled .icon.on { display: block; }
+#deviceOrientationToggle.enabled .icon.off { display: none; }
 
 #sceneListToggle {
   position: absolute;
