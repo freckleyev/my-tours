@@ -17,26 +17,36 @@
   var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
   var deviceOrientationEnabled = false;
 
-  if (deviceOrientationToggleElement) {
-  deviceOrientationToggleElement.addEventListener('click', function() {
-    if (deviceOrientationEnabled) {
-      viewer.controls().unregisterMethod('deviceOrientation');
-      deviceOrientationToggleElement.classList.remove('enabled');
-      deviceOrientationEnabled = false;
-    } else {
-      // getPermission is required for iOS 13+ support
-      deviceOrientationControlMethod.getPermission(function(err) {
-        if (err) {
-          alert("Permission denied for device orientation.");
-          return;
-        }
-        viewer.controls().registerMethod('deviceOrientation', deviceOrientationControlMethod);
-        deviceOrientationToggleElement.classList.add('enabled');
-        deviceOrientationEnabled = true;
-      });
+    if (deviceOrientationToggleElement) {
+        deviceOrientationToggleElement.addEventListener('click', function () {
+            // If already enabled, just turn it off
+            if (deviceOrientationEnabled) {
+                viewer.controls().unregisterMethod('deviceOrientation');
+                deviceOrientationToggleElement.classList.remove('enabled');
+                deviceOrientationEnabled = false;
+                return;
+            }
+
+            // Attempt to enable
+            // This helper handles the iOS 13+ permission popup requirement
+            deviceOrientationControlMethod.getPermission(function (err) {
+                if (err) {
+                    // If this alert shows up, the browser blocked the request 
+                    // or the user denied it previously.
+                    alert("Orientation Error: " + err);
+                    return;
+                }
+
+                // Success! Register the control method
+                viewer.controls().registerMethod('deviceOrientation', deviceOrientationControlMethod);
+                deviceOrientationToggleElement.classList.add('enabled');
+                deviceOrientationEnabled = true;
+
+                // Optional: Turn off autorotate if it's on to avoid control fighting
+                if (typeof stopAutorotate === "function") stopAutorotate();
+            });
+        });
     }
-  });
-}
 
   // [NEW] Toggle elements and Global State
   var toggleLayerElement = document.querySelector('#toggleLayer');
